@@ -1,0 +1,248 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+
+<!-- Mirrored from html.storebuild.shop/medidove-prv/medidove/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Feb 2026 13:15:28 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Faithful Help Healthcare Ltd - Professional Healthcare Services</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.png in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/faithful-branding.css' %}">
+</head>
+
+<body>
+
+    <!-- header begin -->
+    <header>
+        <div class="top-bar d-none d-md-block">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-xl-6 offset-xl-1 col-lg-6 offset-lg-0 col-md-7 offset-md-1">
+                        <div class="header-info">
+                            <span><i class="fas fa-phone"></i> 09121172271</span>
+                            <span><i class="fas fa-envelope"></i> faithwillie261@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 col-md-4">
+                        <div class="header-top-right-btn f-right">
+                            <a href="appoinment.html" class="btn">Schedule Consultation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- menu-area -->
+        <div class="header-menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-5 d-flex align-items-center">
+                        <div class="logo logo-circle pos-rel">
+                            <a href="index-2.html"><img src="{% static 'img/logo/logo.png' %}" alt="logo" width='100'></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9">
+                        <div class="header-right f-right">
+                            <div class="header-lang f-right pos-rel d-none d-lg-block">
+                                {% comment %} <div class="lang-icon">
+                                    <img src="{% static 'img/icon/lang.png' %}" alt="">
+                                    <span>EN<i class="fas fa-angle-down"></i></span>
+                                </div>
+                                <ul class="header-lang-list">
+                                    <li><a href="#">USA</a></li>
+                                    <li><a href="#">UK</a></li>
+                                    <li><a href="#">CA</a></li>
+                                    <li><a href="#">AU</a></li>
+                                </ul>
+                            </div> {% endcomment %}
+                            {% comment %} <div class="header-social-icons f-right d-none d-xl-block">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                </ul>
+                            </div> {% endcomment %}
+                        </div>
+                        <div class="header__menu f-right">
+                            <nav id="mobile-menu">
+                                <ul>
+                                    <li><a href="{% url "core:home" %}">Home</a></li>
+                                    <li><a href="{% url "core:about" %}">About Us</a></li>
+                                    <li><a href="services.html">Services</a>
+                                        {% comment %} <ul class="submenu">
+                                            <li><a href="services.html">Home-Based Elderly Care</a></li>
+                                            <li><a href="services-2.html">Hospital Support Care</a></li>
+                                            <li><a href="services-details.html">Caregiver Training</a></li>
+                                            <li><a href="service-details.html">Free Medical Outreach</a></li>
+                                        </ul> {% endcomment %}
+                                    </li>
+                                    <li><a href="doctor.html">Our Team</a></li>
+                                    {% comment %} <li><a href="blog.html">Resources +</a>
+                                        <ul class="submenu">
+                                            <li><a href="blog.html">Healthcare Tips</a></li>
+                                            <li><a href="blog-2-col.html">Caregiver Guide</a></li>
+                                            <li><a href="blog-details.html">Success Stories</a></li>
+                                        </ul>
+                                    </li> {% endcomment %}
+                                    <li><a href="contact.html">Contact</a></li>
+                                    {% comment %} <li><a href="appoinment.html" class="special-btn">Schedule Consultation</a></li> {% endcomment %}
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mobile-menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+<main>
+    {% block content %}
+    {% endblock content %}
+</main>
+
+    <!-- footer start -->
+    <footer>
+        <div class="footer-top primary-bg footer-map pos-rel z-index-1 pt-120 pb-80">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="footer-contact-info footer-contact-info-3 mb-40">
+                            <div class="footer-logo mb-35">
+                                <a href="#"><img src="{% static 'img/logo/footer-logo-3.html' %}" alt=""></a>
+                            </div>
+                            <div class="footer-contact-content mb-25">
+                                <p>Faithful Help Healthcare Ltd provides compassionate, reliable, and skilled care.
+                                    incididunt ut labore et dolore magna
+                                    aliqua. Professional healthcare services for elderly and vulnerable patients.
+                            </div>
+                            <div class="footer-emailing">
+                                <ul>
+                                    <li><i class="far fa-envelope"></i>faithwillie261@gmail.com</li>
+                                    <li><i class="far fa-clone"></i>Faithful Help Healthcare Ltd</li>
+                                    <li><i class="far fa-flag"></i>227 Marion Street, Columbia</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="footer-widget mb-40">
+                            <div class="footer-title">
+                                <h3>Departments</h3>
+                            </div>
+                            <div class="footer-menu footer-menu-2">
+                                <ul>
+                                    <li><a href="#">Surgery and Radiology</a></li>
+                                    <li><a href="#">Departments</a></li>
+                                    <li><a href="#">Family Medicine</a></li>
+                                    <li><a href="#">Our Doctors</a></li>
+                                    <li><a href="#">Women’s Health</a></li>
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Optician</a></li>
+                                    <li><a href="#">Shop</a></li>
+                                    <li><a href="#">Pediatrics</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Dermatology</a></li>
+                                    <li><a href="#">Book an Appointment</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="footer-widget mb-40">
+                            <div class="footer-title">
+                                <h3>News Feeds</h3>
+                            </div>
+                            <div class="blog-feeds pr-15">
+                                <div class="signle-blog-feeds mb-20">
+                                    <div class="blog-feeds-thumb">
+                                        <a href="news-details.html"><img src="{% static 'img/blog/feeds-thumb-1.html' %}" alt=""></a>
+                                    </div>
+                                    <div class="blog-feeds-text">
+                                        <h5><a href="news-details.html">Lorem ipsum dolor sit am et, consectetur.</a></h5>
+                                        <span class="feeds-date">14 July 2019</span>
+                                    </div>
+                                </div>
+                                <div class="signle-blog-feeds mb-20">
+                                    <div class="blog-feeds-thumb">
+                                        <a href="news-details.html"><img src="{% static 'img/blog/feeds-thumb-2.html' %}" alt=""></a>
+                                    </div>
+                                    <div class="blog-feeds-text">
+                                        <h5><a href="news-details.html">Lorem ipsum dolor sit am et, consectetur.</a></h5>
+                                        <span class="feeds-date">14 July 2019</span>
+                                    </div>
+                                </div>
+                                <div class="signle-blog-feeds  mb-20">
+                                    <div class="blog-feeds-thumb">
+                                        <a href="news-details.html"><img src="{% static 'img/blog/feeds-thumb-3.html' %}" alt=""></a>
+                                    </div>
+                                    <div class="blog-feeds-text">
+                                        <h5><a href="news-details.html">Lorem ipsum dolor sit am et, consectetur.</a></h5>
+                                        <span class="feeds-date">14 July 2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom pt-25 pb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="footer-copyright footer-copyright-3 text-center">
+                            <p>Copyright by@ codesignature - 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- JS here -->
+    <script src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/one-page-nav-min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/ajax-form.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvEEMx3XDpByNzYNn0n62Zsq_sVYPx1zY"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

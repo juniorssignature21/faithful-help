@@ -1,0 +1,66 @@
+{% extends "./partials/base.html" %}
+{% load static %}
+{% block content %}
+<!-- hero-area start -->
+<section
+  class="breadcrumb-bg pt-200 pb-180"
+  data-background="img/page/page-bg.html"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-9">
+        <div class="page-title">
+          <p class="small-text pb-15">We are here for your care.</p>
+          <h1>Register Page</h1>
+        </div>
+      </div>
+      <div
+        class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center"
+      >
+        <div class="page-breadcumb">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index-2.html">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Register
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- hero-area end -->
+
+<!-- login Area Strat-->
+<section class="login-area pt-120 pb-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="basic-login">
+          <h3 class="text-center mb-60">Signup From Here</h3>
+          <form method="POST">
+            {% csrf_token %}
+            <label for="name">Username <span>*</span></label>
+            {{ form.username }}
+            <label for="email-id">Email Address <span>*</span></label>
+            {{ form.email }}
+            <label for="pass">Password <span>*</span></label>
+            {{ form.password1 }}
+            <label for="pass">Confirm Password <span>*</span></label>
+            {{ form.password2 }}
+            <div class="mt-10"></div>
+            <button class="btn theme-btn-2 w-100" type="submit">Register Now</button>
+            <div class="or-divide"><span>or</span></div>
+            <a class="btn btn-icon-green w-100" href="#">login Now</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- login Area End-->
+{% endblock content %}
