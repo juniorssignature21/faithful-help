@@ -1,0 +1,44 @@
+{% extends "partials/base.html" %} {% load static %} {% block content %}
+        <!-- hero-area start -->
+        <section class="breadcrumb-bg pt-200 pb-180" data-background="{% static 'img/page/page-bg.png' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-12">
+                        <div class="page-title">
+                            <p class="small-text pb-15">We are here for your care.</p>
+                            <h1>404 - Page Not Found</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12 d-flex align-items-center">
+                        <div class="page-breadcumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb ">
+                                    <li class="breadcrumb-item">
+                                        <a href="{% url "core:home" %}">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">404</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hero-area end -->
+        <!-- 404 Area Strat-->
+        <section class="error-area pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 text-center">
+                        <div class="error-content">
+                            <h1 class="error-code">404</h1>
+                            <h2 class="error-message">Oops! The page you're looking for can't be found.</h2>
+                            <p class="error-description">It seems the page you are trying to reach doesn't exist or has been moved. Please check the URL or return to the homepage.</p>
+                            <a href="{% url "core:home" %}" class="btn theme-btn mt-30">Go Back Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 404 Area End-->
+{% endblock content %}
