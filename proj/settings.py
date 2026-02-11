@@ -11,19 +11,22 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l(856@1y1bqhc36@ai^_sxcdadz)hb#!ywc7$dch5-jc*8_usi'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -138,3 +141,24 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'chibuzor.john.2018@gmail.com'
 EMAIL_HOST_PASSWORD = 'jyvitudywsscxict'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8000',
+    'http://localhost:5170',      # ADD THIS - Vite default port
+    'http://localhost:5173',      # ADD THIS - Vite alternative port
+    'http://127.0.0.1:5170',      # ADD THIS
+]
+custom_domain = os.getenv('CUSTOM_DOMAIN')
+render_url = os.getenv('RENDER_URL')
+
+if custom_domain := os.getenv('CUSTOM_DOMAIN'):
+    CORS_ALLOWED_ORIGINS.append(f'https://{custom_domain}')
+if render_url := os.getenv('RENDER_URL'):
+    CORS_ALLOWED_ORIGINS.append(f'https://{render_url}')
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.onrender\.com$",
+]
