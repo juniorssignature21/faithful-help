@@ -9405,7 +9405,19 @@ p.checkout-coupon input[type="text"] {
   margin-bottom: 20px;
 
 }
+.basic-login textarea {
 
+  width: 100%;
+
+  border: 2px solid #eaedff;
+
+  color: #6f7172;
+
+  padding: 5px 20px;
+
+  margin-bottom: 20px;
+
+}
 
 
 .basic-login label {

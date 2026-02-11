@@ -10,16 +10,16 @@ from accounts.models import Profile
 
 # Create your views here.
 def home(request):
-    return render(request, "index.html")
+    return render(request, "core/index.html")
 
 def about(request):
-    return render(request, "about.html")
+    return render(request, "core/about.html")
 
 def book_appointment(request):
-    return render(request, "appointment.html")
+    return render(request, "core/appointment.html")
 
 def services(request):
-    return render(request, "services.html")
+    return render(request, "core/services.html")
 
 @login_required(login_url='accounts:login')
 def contact(request):
@@ -57,4 +57,4 @@ def contact(request):
                     messages.error(request, f"{field}: {error}")
             return redirect("core:contact")
 
-    return render(request, "contact.html", {"form": form})
+    return render(request, "core/contact.html", {"form": form, "profile": profile})
