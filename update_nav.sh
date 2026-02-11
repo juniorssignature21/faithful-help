@@ -25,7 +25,7 @@ for file in *.html; do
                                         </ul>\
                                     </li>\
                                     <li><a href="contact.html">Contact</a></li>\
-                                    <li><a href="appoinment.html" class="special-btn">Schedule Consultation</a></li>\
+                                    <li><a href="{% url "core:book-appointment" %}" class="special-btn">Schedule Consultation</a></li>\
                                 </ul>\
                             </nav>' "$file"
 done

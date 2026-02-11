@@ -6,7 +6,7 @@
 /* Brand Color Definitions */
 :root {
     --primary-blue: #e32f6f;      /* Main brand color */
-    --secondary-teal: #58165b;    /* Accent color */
+    --secondary-teal: #008080;    /* Accent color */
     --dark-blue: #004499;         /* Darker shade for hover/active */
     --light-blue: #E6F2FF;        /* Light background */
     --healthcare-green: #2D9E66;  /* Healthcare green for highlights */

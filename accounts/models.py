@@ -6,8 +6,8 @@ class User(AbstractUser):
     username = models.CharField(unique=True)
     email = models.EmailField(unique=True)
     
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email']
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
     
     
     def __str__(self):
@@ -25,8 +25,12 @@ class Profile(models.Model):
     city = models.CharField(max_length=500, blank=True, null=True)
     state = models.CharField(max_length=500, blank=True, null=True)
     country = models.CharField(max_length=500, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return f"{self.user.username}'s Profile"
     
+    def get_fullname(self):
+        return f"{self.first_name} {self.last_name}"
     

@@ -7,7 +7,7 @@ Complete website redesign and rebranding of the MediDove template to reflect **F
 
 ### 1. **Brand Colors Updated**
 - **Primary Color**: Changed from red (#e12454) to Professional Healthcare Blue (#e32f6f)
-- **Secondary Color**: Changed from green (#8fb569) to Teal (#58165b)
+- **Secondary Color**: Changed from green (#8fb569) to Teal (#008080)
 - All CSS files updated with the new color scheme
 - Created new `faithful-branding.css` with comprehensive brand styling
 

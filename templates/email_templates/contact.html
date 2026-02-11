@@ -1,0 +1,230 @@
+<!--Email Template for Contact Form Submission - Faithful Help Healthcare Ltd-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Inquiry - Faithful Help Healthcare Ltd</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .email-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(227, 47, 111, 0.15);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #e32f6f 0%, #58165b 100%);
+            color: #ffffff;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .greeting {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .field-group {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #e32f6f;
+            border-radius: 4px;
+        }
+        
+        .field-label {
+            font-weight: 600;
+            color: #58165b;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        
+        .field-value {
+            color: #555;
+            font-size: 15px;
+            word-break: break-word;
+        }
+        
+        .message-box {
+            background-color: #f0f8ff;
+            border: 1px solid #e32f6f;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+        
+        .message-title {
+            font-weight: 600;
+            color: #58165b;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        
+        .message-content {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+        
+        .cta-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e32f6f;
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #e32f6f 0%, #58165b 100%);
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background-color: #f5f5f5;
+            padding: 25px 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer-text {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.6;
+        }
+        
+        .company-name {
+            font-weight: 600;
+            color: #e32f6f;
+            margin: 10px 0;
+        }
+        
+        .contact-info {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <!-- Header -->
+        <div class="header">
+            <h1>New Contact Inquiry</h1>
+            <p>Faithful Help Healthcare Ltd</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <div class="greeting">
+                <p>Hello Admin,</p>
+                <p>A new contact form submission has been received. Please review the details below:</p>
+            </div>
+            
+            <!-- Contact Details -->
+            <div class="field-group">
+                <div class="field-label">Full Name</div>
+                <div class="field-value">{{ full_name }}</div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-label">Email Address</div>
+                <div class="field-value">{{ email }}</div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-label">Phone Number</div>
+                <div class="field-value">{{ phone }}</div>
+            </div>
+            
+            <div class="field-group">
+                <div class="field-label">Subject</div>
+                <div class="field-value">{{ subject }}</div>
+            </div>
+            
+            <!-- Message -->
+            <div class="message-box">
+                <div class="message-title">Message</div>
+                <div class="message-content">{{ message }}</div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <p style="color: #666; font-size: 14px; margin-bottom: 15px;">Respond promptly to nurture this inquiry</p>
+                <a href="mailto:{{ email }}" class="cta-button">Reply to This Inquiry</a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="company-name">Faithful Help Healthcare Ltd</div>
+            <div class="divider"></div>
+            <div class="contact-info">
+                <p>Phone: 09121172271</p>
+                <p>Email: faithwillie261@gmail.com</p>
+            </div>
+            <div class="divider"></div>
+            <div class="footer-text">
+                <p>This is an automated email notification. Please do not reply directly to this address.</p>
+                <p style="margin-top: 10px;">© 2026 Faithful Help Healthcare Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
