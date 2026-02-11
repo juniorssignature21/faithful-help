@@ -5,7 +5,7 @@ from django.template.loader import render_to_string
 from django.contrib.auth.decorators import login_required
 
 
-from core.forms import CreateContactForm
+from core.forms import CreateContactForm, BookAppointmentForm
 from accounts.models import Profile
 
 # Create your views here.
@@ -15,8 +15,32 @@ def home(request):
 def about(request):
     return render(request, "core/about.html")
 
+@login_required(login_url='accounts:login')
 def book_appointment(request):
-    return render(request, "core/appointment.html")
+    form = BookAppointmentForm()
+    
+    if request.method == "POST":
+        form = BookAppointmentForm(request.POST)
+        if form.is_valid():
+            form.user = request.user
+            form.save()
+            messages.success(request, "Your appointment has been booked successfully!")
+            return redirect("core:book-appointment")
+        else:
+            form_errors = {}
+            
+            for field, errors in form.errors.items():
+                for error in errors:
+                    form_errors[field] = error
+            
+            messages.error(request, f"{[f for f in form_errors.keys()]} : {[e for e in form_errors.values()]}")
+        
+        form = BookAppointmentForm()
+    context = {
+        'form':form
+    }
+            
+    return render(request, "core/appointment.html", context)
 
 def services(request):
     return render(request, "core/services.html")
@@ -28,7 +52,8 @@ def contact(request):
     if request.method == "POST":
         form = CreateContactForm(request.POST)
         if form.is_valid():
-            form.save(commit=False)
+            form.user = request.user
+            form.save()
             try:
                 html_message = render_to_string("email_templates/contact.html", {
                     'full_name':form.cleaned_data['full_name'],
@@ -58,3 +83,4 @@ def contact(request):
             return redirect("core:contact")
 
     return render(request, "core/contact.html", {"form": form, "profile": profile})
+

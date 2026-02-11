@@ -14,7 +14,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb ">
                                     <li class="breadcrumb-item">
-                                        <a href="index-2.html">Home</a>
+                                        <a href="{% url "core:home" %}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">Appointment</li>
                                 </ol>
@@ -40,56 +40,49 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <form class="row" method="POST">
+                                    {% csrf_token %}    
                                     <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <select>
-                                            <option value="1">Select Service</option>
-                                            <option value="2">Home-Based Elderly Care</option>
-                                            <option value="3">Hospital Support Care</option>
-                                            <option value="4">Caregiver Training</option>
-                                        </select>
+                                        {{ form.service }}
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <select>
-                                            <option value="1">Preferred Caregiver Experience</option>
-                                            <option value="2">Elderly Care Specialist</option>
-                                            <option value="3">Nursing Assistant</option>
-                                            <option value="4">Companion Care</option>
-                                        </select>
+                                       {{ form.caregiver_experience }}
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <select>
-                                            <option value="1">Full Name</option>
-                                            <option value="2">Enter Your Name</option>
-                                        </select>
+                                        <div class="calculate-form appointment-form-3 mb-20">
+                                           {{ form.full_name }}
+                                            {% comment %} <i class="fas fa-phone"></i> {% endcomment %}
+                                        </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <form class="calculate-form appointment-form-3 mb-20" action="#">
-                                            <input type="text" placeholder="Your Phone number">
+                                        <div class="calculate-form appointment-form-3 mb-20">
+                                           {{ form.phone }}
                                             <i class="fas fa-phone"></i>
-                                        </form>
+                                        </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <form class="calculate-form appointment-form-3 mb-20" action="#">
-                                            <input type="text" placeholder="Select date">
-                                            <i class="far fa-calendar"></i>
-                                        </form>
+                                        <div class="calculate-form appointment-form-3 mb-20">
+                                            {{ form.date }}
+                                            {% comment %} <i class="far fa-calendar"></i> {% endcomment %}
+                                        </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <form class="calculate-form appointment-form-3 mb-20" action="#">
-                                            <input type="text" placeholder="Add time">
-                                            <i class="far fa-clock"></i>
-                                        </form>
+                                        <div class="calculate-form appointment-form-3 mb-20">
+                                            {{ form.time }}
+                                            {% comment %} <i class="far fa-clock"></i> {% endcomment %}
+                                        </div>
                                     </div>
                                     <div class="col-xl-12">
-                                        <form class="calculate-form appointment-form-3 mb-20" action="#">
-                                            <textarea name="Special request" cols="30" rows="10" placeholder="Special request"></textarea>
+                                        <div class="calculate-form appointment-form-3 mb-20">
+                                            {{ form.special_request }}
                                             <i class="far fa-edit"></i>
-                                        </form>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="col-xl-12">
+                                        <button type="submit" class="btn mt-40 w-100">Book Now</button>
+                                    </div>
+                                </form>
                             </div>
-                            <a href="#" class="btn mt-40">submit query</a>
                         </div>
                     </div>
                 </div>
@@ -97,4 +90,4 @@
         </section>
         <!-- calculate-area end -->
        
-{% endblock content %}
+{% endblock content %}  
