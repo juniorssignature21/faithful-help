@@ -26,13 +26,26 @@ def about(request):
 
 @login_required(login_url='accounts:login')
 def book_appointment(request):
-    form = BookAppointmentForm()
+    try:
+        profile = Profile.objects.get(user=request.user)
+    except:
+        messages.error(request, "Complete your profile")
+        return redirect('accounts:create-profile')
+    
+    initial_data = {
+        'full_name': profile.get_fullname(),
+        'phone': profile.phone_number if hasattr(profile, 'phone_number') else '',
+        'email': request.user.email,
+    }
+    
+    form = BookAppointmentForm(initial=initial_data)
     
     if request.method == "POST":
         form = BookAppointmentForm(request.POST)
         if form.is_valid():
-            form.user = request.user
-            form.save()
+            appointment = form.save(commit=False)
+            appointment.user = request.user
+            appointment.save()
             messages.success(request, "Your appointment has been booked successfully!")
             return redirect("core:book-appointment")
         else:
@@ -44,7 +57,7 @@ def book_appointment(request):
             
             messages.error(request, f"{[f for f in form_errors.keys()]} : {[e for e in form_errors.values()]}")
         
-        form = BookAppointmentForm()
+        form = BookAppointmentForm(initial=initial_data)
     context = {
         'form':form
     }
@@ -56,8 +69,18 @@ def services(request):
 
 @login_required(login_url='accounts:login')
 def contact(request):
-    form = CreateContactForm()
-    profile = Profile.objects.get(user=request.user)
+    try:
+        profile = Profile.objects.get(user=request.user)
+    except:
+        messages.error(request, "Complete your profile")
+        return redirect('accounts:create-profile')
+    initial_data = {
+        'full_name': profile.get_fullname(),
+        'phone': profile.phone_number if hasattr(profile, 'phone_number') else '',
+        'email': request.user.email,
+    }
+    form = CreateContactForm(initial=initial_data)
+    
     if request.method == "POST":
         form = CreateContactForm(request.POST)
         if form.is_valid():
@@ -90,6 +113,9 @@ def contact(request):
                 for error in errors:
                     messages.error(request, f"{field}: {error}")
             return redirect("core:contact")
-
+    else:
+        form = CreateContactForm(initial=initial_data)
     return render(request, "core/contact.html", {"form": form, "profile": profile})
 
+def our_team(request):
+    return render(request, "core/doctor.html")

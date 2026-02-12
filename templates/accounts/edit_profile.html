@@ -1,0 +1,47 @@
+{% extends "partials/base.html" %} {% load static %} {% block content %}
+         <!-- hero-area start -->
+        <section class="breadcrumb-bg pt-200 pb-180" data-background="{% static 'img/page/page-bg.png' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9">
+                        <div class="page-title">
+                            <p class="small-text pb-15">We are here for your care.</p>
+                            <h1>Edit Profile</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center">
+                        <div class="page-breadcumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb ">
+                                    <li class="breadcrumb-item">
+                                        <a href="{% url "core:home" %}">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hero-area end -->
+
+        <!-- edit-profile Area Strat-->
+        <section class="edit-profile-area pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="basic-login">
+                            <h3 class="text-center mb-60">Edit Your Profile</h3>
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form }}
+                                <button type="submit" class="btn btn-icon-green w-100">Update Profile</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- edit-profile Area End-->
+{% endblock content %}

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, about, book_appointment, services, contact
+from .views import home, about, book_appointment, services, contact, our_team
 
 app_name = "core"
 
@@ -9,4 +9,5 @@ urlpatterns = [
     path('book-appointment/', book_appointment, name='book-appointment'),
     path('services/', services, name='services'),
     path('contact/', contact, name="contact"),
+    path('our-team/', our_team, name="our-team"),
 ]

@@ -1,0 +1,432 @@
+/* 
+   Faithful Help Healthcare Ltd - Custom Branding CSS
+   Professional Healthcare Services Color Scheme
+*/
+
+/* Brand Color Definitions */
+:root {
+    --primary-blue: #e32f6f;      /* Main brand color */
+    --secondary-teal: #008080;    /* Accent color */
+    --dark-blue: #004499;         /* Darker shade for hover/active */
+    --light-blue: #E6F2FF;        /* Light background */
+    --healthcare-green: #2D9E66;  /* Healthcare green for highlights */
+    --neutral-dark: #1A1A1A;      /* Text dark */
+    --neutral-light: #F5F5F5;     /* Background light */
+    --white: #FFFFFF;             /* White */
+    --success: #28a745;           /* Success color */
+    --warning: #ffc107;           /* Warning color */
+    --danger: #dc3545;            /* Danger color */
+}
+
+/* Header Branding */
+.header-menu-area {
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.1);
+}
+
+.logo a {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-blue);
+    letter-spacing: -0.5px;
+}
+
+.logo a:hover {
+    color: var(--secondary-teal);
+}
+
+/* Top Bar */
+.top-bar {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
+}
+
+.top-bar .header-info span {
+    color: var(--white);
+    margin-right: 30px;
+}
+
+.top-bar .header-info i {
+    color: var(--light-blue);
+    margin-right: 8px;
+}
+
+/* Navigation Styling */
+#mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#mobile-menu > ul > li {
+    display: inline-block;
+    position: relative;
+    margin-right: 30px;
+}
+
+#mobile-menu > ul > li > a {
+    color: var(--neutral-dark);
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+    display: block;
+}
+
+#mobile-menu > ul > li > a:hover {
+    color: var(--primary-blue);
+}
+
+#mobile-menu .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 4px;
+    min-width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 10px;
+}
+
+#mobile-menu > ul > li:hover .submenu {
+    display: block;
+}
+
+#mobile-menu .submenu li {
+    list-style: none;
+    padding: 0;
+}
+
+#mobile-menu .submenu a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--neutral-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 13px;
+}
+
+#mobile-menu .submenu a:hover {
+    background: var(--light-blue);
+    color: var(--primary-blue);
+    padding-left: 25px;
+}
+
+/* Special Button in Navigation */
+.special-btn {
+    background: var(--primary-blue) !important;
+    color: var(--white) !important;
+    padding: 10px 20px !important;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+}
+
+.special-btn:hover {
+    background: var(--dark-blue) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.3) !important;
+}
+
+/* Primary Button Styling */
+.btn {
+    background: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--dark-blue);
+    border-color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Secondary Teal Button */
+.btn-icon-green {
+    background: var(--secondary-teal);
+    border-color: var(--secondary-teal);
+}
+
+.btn-icon-green:hover {
+    background: #006666;
+    border-color: #006666;
+}
+
+/* Primary Background */
+.primary-bg {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
+    color: var(--white);
+}
+
+/* Hero Section */
+.hero-area {
+    position: relative;
+}
+
+.hero-text h5 {
+    color: var(--secondary-teal);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero-text h1 {
+    color: var(--neutral-dark);
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 20px 0;
+}
+
+.hero-text p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Section Titles */
+.section-title h5 {
+    color: var(--primary-blue);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-title h1 {
+    color: var(--neutral-dark);
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.section-title-line {
+    border-top: 3px solid var(--primary-blue);
+    width: 60px;
+    margin-top: 15px;
+}
+
+/* Services Section */
+.service-box {
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.service-box:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 8px 24px rgba(0, 102, 204, 0.15);
+    transform: translateY(-5px);
+}
+
+.service-box h3 {
+    color: var(--neutral-dark);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0 15px;
+}
+
+.service-box p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.service-link {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--secondary-teal);
+}
+
+/* Team Section */
+.team-box {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.team-box:hover {
+    box-shadow: 0 8px 24px rgba(0, 102, 204, 0.15);
+}
+
+.team-content h3 {
+    color: var(--neutral-dark);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 15px 0 5px;
+}
+
+.team-content h6 {
+    color: var(--primary-blue);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.team-link {
+    background: var(--primary-blue);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.team-link:hover {
+    background: var(--secondary-teal);
+    transform: scale(1.1);
+}
+
+/* Fact/Statistics Section */
+.fact-area {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
+}
+
+.single-satisfied h1 {
+    color: var(--white);
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.single-satisfied h5 {
+    color: var(--light-blue);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.single-satisfied p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+}
+
+.footer-top {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
+    color: var(--white);
+}
+
+.footer-widget h3 {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-widget a {
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s ease;
+}
+
+.footer-widget a:hover {
+    color: var(--white);
+}
+
+.footer-copyright {
+    background: #0d0d0d;
+    padding: 20px 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.emergency-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+/* Contact Information Styling */
+.footer-emailing li {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-emailing i {
+    color: var(--light-blue);
+    margin-right: 10px;
+    width: 20px;
+}
+
+/* CTA Section */
+.cta-area {
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.95) 0%, rgba(0, 128, 128, 0.95) 100%),
+                url('../../img/slider/slider-bg-1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.cta-area .section-text-white h1 {
+    color: var(--white);
+    font-size: 48px;
+    line-height: 1.3;
+}
+
+.cta-area .section-text-white h5 {
+    color: var(--light-blue);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
+    
+    .section-title h1 {
+        font-size: 32px;
+    }
+    
+    .cta-area .section-text-white h1 {
+        font-size: 32px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .btn, .section-button {
+        background: var(--primary-blue) !important;
+        color: white !important;
+    }
+}

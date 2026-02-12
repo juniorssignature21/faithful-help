@@ -1,0 +1,85 @@
+{% extends "partials/base.html" %} {% load static %} {% block content %}
+ <!-- hero-area start -->
+        <section class="breadcrumb-bg pt-200 pb-180" data-background="{% static 'img/page/page-bg.png' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9">
+                        <div class="page-title">
+                            <p class="small-text pb-15">We are here for your care.</p>
+                            <h1>{{ request.user.username }}'s Profile</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center">
+                        <div class="page-breadcumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb ">
+                                    <li class="breadcrumb-item">
+                                        <a href="{% url "core:home" %}">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hero-area end -->
+        <!-- profile Area Start -->
+        <section class="profile-area pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="profile-content">
+                            <!-- Profile Header -->
+                            <div class="profile-header d-flex align-items-start mb-40">
+                                <div class="profile-img mr-30">
+                                    {% if profile.image %}
+                                        <img src="{{ profile.image.url }}" alt="Profile Picture" class="rounded-circle w-100">
+                                    {% else %}
+                                        <img src="{% static 'img/profile-placeholder.png' %}" alt="Profile Picture" class="rounded-circle w-100">
+                                    {% endif %}
+                                </div>
+                                <div class="profile-info flex-grow-1">
+                                    <h2 class="mb-15">{{ profile.get_fullname }}</h2>
+                                    <div class="profile-details">
+                                        <div class="detail-item mb-12">
+                                            <span class="detail-label">Email:</span>
+                                            <span class="detail-value">{{ profile.user.email }}</span>
+                                        </div>
+                                        <div class="detail-item mb-12">
+                                            <span class="detail-label">Phone:</span>
+                                            <span class="detail-value">{{ profile.phone_number }}</span>
+                                        </div>
+                                        {% if profile.address %}
+                                        <div class="detail-item mb-12">
+                                            <span class="detail-label">Address:</span>
+                                            <span class="detail-value">{{ profile.address }}</span>
+                                        </div>
+                                        {% endif %}
+                                        {% if profile.bio %}
+                                        <div class="detail-item">
+                                            <span class="detail-label">Bio:</span>
+                                            <span class="detail-value">{{ profile.bio }}</span>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Profile Actions -->
+                            <div class="profile-actions mt-40">
+                                <a href="{% url "accounts:edit-profile" %}" class="btn btn-icon-green">
+                                    <span>✎</span>Edit Profile
+                                </a>
+                                <a href="{% url "accounts:logout" %}" class="btn btn-icon-red">
+                                    <span>→</span>Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- profile Area End -->
+
+{% endblock content %}
