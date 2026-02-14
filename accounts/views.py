@@ -95,7 +95,7 @@ def edit_profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Profile updated successfully!")
-            return redirect("core:home")
+            return redirect("accounts:view-profile")
         else:
             for field, errors in form.errors.items():
                 for error in errors:

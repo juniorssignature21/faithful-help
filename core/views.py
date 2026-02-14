@@ -43,11 +43,10 @@ def book_appointment(request):
     if request.method == "POST":
         form = BookAppointmentForm(request.POST)
         if form.is_valid():
-            appointment = form.save(commit=False)
-            appointment.user = request.user
-            appointment.save()
-            messages.success(request, "Your appointment has been booked successfully!")
-            return redirect("core:book-appointment")
+           form.user = request.user
+           form.save()
+           messages.success(request, "Your appointment has been booked successfully!")
+           return redirect("core:book-appointment")
         else:
             form_errors = {}
             

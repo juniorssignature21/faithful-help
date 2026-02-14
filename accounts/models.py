@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class User(AbstractUser):
-    username = models.CharField(unique=True)
+    username = models.CharField(max_length=150, unique=True)
     email = models.EmailField(unique=True)
     
     USERNAME_FIELD = 'email'
@@ -25,7 +25,7 @@ class Profile(models.Model):
     city = models.CharField(max_length=500, blank=True, null=True)
     state = models.CharField(max_length=500, blank=True, null=True)
     country = models.CharField(max_length=500, blank=True, null=True)
-    image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
+    profile_pics = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

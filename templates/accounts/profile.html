@@ -34,10 +34,10 @@
                             <!-- Profile Header -->
                             <div class="profile-header d-flex align-items-start mb-40">
                                 <div class="profile-img mr-30">
-                                    {% if profile.image %}
-                                        <img src="{{ profile.image.url }}" alt="Profile Picture" class="rounded-circle w-100">
+                                    {% if profile.profile_pics %}
+                                        <img src="{{ profile.profile_pics.url }}" alt="Profile Picture" class="rounded-circle w-100">
                                     {% else %}
-                                        <img src="{% static 'img/profile-placeholder.png' %}" alt="Profile Picture" class="rounded-circle w-100">
+                                        <img src="{% static 'img/profile.png' %}" alt="Profile Picture" class="rounded-circle w-100">
                                     {% endif %}
                                 </div>
                                 <div class="profile-info flex-grow-1">
