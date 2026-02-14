@@ -25,7 +25,7 @@ class Profile(models.Model):
     city = models.CharField(max_length=500, blank=True, null=True)
     state = models.CharField(max_length=500, blank=True, null=True)
     country = models.CharField(max_length=500, blank=True, null=True)
-    profile_pics = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
+    profile_pics = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
