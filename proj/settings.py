@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     # whitenoise middleware for serving static files in production
+    
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -141,11 +142,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Media settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # Allow opt-in serving of media files by Django for local testing when
 # DEBUG is False. Read from .env via load_dotenv at top of this file.
 SERVE_MEDIA = os.getenv('SERVE_MEDIA', 'False').lower() in ('true', '1', 'yes')
@@ -173,14 +176,19 @@ CORS_ALLOWED_ORIGINS = [
 ]
 custom_domain = os.getenv('CUSTOM_DOMAIN')
 render_url = os.getenv('RENDER_URL')
+vercel_url = os.getenv('VERCEL_URL')
 
 if custom_domain := os.getenv('CUSTOM_DOMAIN'):
     CORS_ALLOWED_ORIGINS.append(f'https://{custom_domain}')
 if render_url := os.getenv('RENDER_URL'):
     CORS_ALLOWED_ORIGINS.append(f'https://{render_url}')
+if vercel_url := os.getenv('VERCEL_URL'):
+    CORS_ALLOWED_ORIGINS.append(f'https://{vercel_url}')
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.onrender\.com$",
+    r"^https://.*\.vercel\.app$",
+    
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
