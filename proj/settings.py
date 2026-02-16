@@ -134,11 +134,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-STORAGES = {
-    "staticfiles":{
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
-    }
-}
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
@@ -148,15 +144,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
+    },
+}
+
+
 # Media settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Allow opt-in serving of media files by Django for local testing when
 # DEBUG is False. Read from .env via load_dotenv at top of this file.
-SERVE_MEDIA = os.getenv('SERVE_MEDIA', 'False').lower() in ('true', '1', 'yes')
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -166,6 +170,13 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'chibuzor.john.2018@gmail.com'
 EMAIL_HOST_PASSWORD = 'jyvitudywsscxict'
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'https://garbless-tomas-thankfully.ngrok-free.dev',
+    "https://*.vercel.app",
+    "https://*.onrender.com",
+]
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
@@ -179,9 +190,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',      # ADD THIS - Vite alternative port
     'http://127.0.0.1:5170',      # ADD THIS
 ]
-custom_domain = os.getenv('CUSTOM_DOMAIN')
-render_url = os.getenv('RENDER_URL')
-vercel_url = os.getenv('VERCEL_URL')
+
 
 if custom_domain := os.getenv('CUSTOM_DOMAIN'):
     CORS_ALLOWED_ORIGINS.append(f'https://{custom_domain}')
